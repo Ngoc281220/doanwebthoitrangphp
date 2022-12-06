@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+ header{
+    height: 65px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
+}
+
+ .menu{
+    display: flex;
+    padding: 0 70px;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 65px;
+}
+
+.logo{
+    width: 67px;
+    height: 53px;
+}
+.logo img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.menu ul li{
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.menu ul li a{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.icon-user img{
+    width: 26px;
+    height: 26px;
+    display: block;
+    object-fit: cover;
+}
+
+main{
+    margin-top: 65px;
+}
+
+.container{
+    display: flex;
+    padding: 0 70px;
+    
+}
+
+.sidebar{
+    width: 25%;
+    border: 1px solid #ccc;
+    height: 400px;
+    margin-right: 10px;
+}
+.sidebar h3 {
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 400;
+    font-size: 15px;
+
+}
+.sidebar h3 img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    display: block;
+    margin-right: 5px;
+}
+.sidebar nav  {
+    
+}
+.sidebar nav a{
+  display: block;
+  padding: 15px 10px;
+  
+  font-size: 16px;
+  color: #000;
+}
+
+.sidebar nav a:hover{
+    background-color: rgb(238, 102, 102);
+}
+.content{
+    width: 75%;
+}
+.banner {
+    height: 315px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.list-product h3{
+    font-size: 48px;
+    padding: 20px 0;
+    font-weight: normal;
+    color: #000;
+}
+
+.list-item{
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+    
+}
+
+.item{
+    width: 25%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.item a {
+    display: block;
+    width: 100%;
+}
+.item a img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+}
+.home-title .style{
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 5px;
+    display: block;
+}
+
+.home-title a h4{
+    overflow: hidden;
+    line-height: 1.3em;
+    color: #000;
+    clear: both;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: initial;
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.home-title .price{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(231, 13, 13);
+    font-size: 16px;
+}
+
+footer h3{
+    padding: 15px 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
