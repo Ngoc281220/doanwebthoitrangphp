@@ -11,6 +11,7 @@
        $mota = $_POST['mota'];
        $noidung = $_POST['noidung'];
        $tinhtrang = $_POST['tinhtrang'];
+       $danhmuc = $_POST['danhmuc'];
     
        if(isset($_POST['themsanpham'])){
             if(empty($masp) || empty($hinhanh)){
@@ -18,8 +19,9 @@
                 header('Location:../../index.php?action=quanlysanpham&query=them');
             }else{
              
-                  $sql_inser = "INSERT INTO product( `ma_sp`, `tensanpham`, `giasp`, `soluong`, `hinhanh`, `kichthuoc`, `mota`, `noidung`, `tinhtrang`) 
-                VALUES ('$masp','$tensanpham','$gia','$soluong','$hinhanh','$kichthuoc','$mota','$noidung','$tinhtrang')";
+                //   $sql_inser = "INSERT INTO product( `ma_sp`, `tensanpham`, `giasp`, `soluong`, `hinhanh`, `kichthuoc`, `mota`, `noidung`, `tinhtrang`,'id_danhmuc') 
+                // VALUES ('$masp','$tensanpham','$gia','$soluong','$hinhanh','$kichthuoc','$mota','$noidung','$tinhtrang','$danhmuc')";
+                $sql_inser = "INSERT INTO `product`( `ma_sp`, `tensanpham`, `giasp`, `soluong`, `hinhanh`, `kichthuoc`, `mota`, `noidung`, `tinhtrang`,  `id_danhmuc`) VALUES ('$masp','$tensanpham','$gia','$soluong','$hinhanh','$kichthuoc','$mota','$noidung','$tinhtrang','$danhmuc')";
                 $resrul = mysqli_query($connect,$sql_inser);
                   $folder = "uploads/".$hinhanh;
                   move_uploaded_file($hinhanh_tmp,$folder);
@@ -31,13 +33,14 @@
             
        }
        else if(isset($_POST['suasanpham'])){
-          
+        $id = $_GET['id_sp'];
           if(!empty($_FILES['hinhanh']['name'])){
-            $id = $_GET['id_sp'];
-            move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
-            $sql_update = "UPDATE product SET masp = '".$masp."' ,tensanpham='".$tensanpham."',
-            giasp ='". $gia."', soluong = '".$soluong."', hinhanh = '".$hinhanh."', kichthuoc = '".$kichthuoc."',
-            mota = '".$mota."', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."'WHERE id_sp = '$id '";
+           
+            $folder = "uploads/".$hinhanh;
+             move_uploaded_file($hinhanh_tmp,$folder);
+            $sql_update = "UPDATE product SET ma_sp = '$masp' ,tensanpham='$tensanpham',
+            giasp =' $gia', soluong = '$soluong', hinhanh = '$hinhanh', kichthuoc = '$kichthuoc',
+            mota = '$mota', noidung = '$noidung', tinhtrang = '$tinhtrang',id_danhmuc = '$danhmuc' WHERE id_sp = '$id '";
           
             $sql = "SELECT * FROM product WHERE id_sp = '$id' LIMIT 1";
             $query = mysqli_query($connect,$sql);
@@ -46,12 +49,12 @@
                }
 
           }else{
-            $sql_update = "UPDATE product SET masp = '".$masp."' ,tensanpham='".$tensanpham."',
-            giasp ='". $gia."', soluong = '".$soluong."',  kichthuoc = '".$kichthuoc."',
-            mota = '".$mota."', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."'WHERE id_sp = '$id '";
+            $sql_update = "UPDATE product SET ma_sp = '$masp' ,tensanpham='$tensanpham',
+            giasp =' $gia', soluong = '$soluong',  kichthuoc = '$kichthuoc',
+            mota = '$mota', noidung = '$noidung', tinhtrang = '$tinhtrang', id_danhmuc = '$danhmuc' WHERE id_sp = '$id '";
           }
 
-            // mysqli_query($connect,$sql_update);
-            // header('Location:../../index.php?action=quanlysanpham&query=them');
+            mysqli_query($connect,$sql_update);
+            header('Location:../../index.php?action=quanlysanpham&query=them');
        }
 ?>

@@ -36,6 +36,22 @@
                         <td><textarea rows="10" name="noidung" width="100%" style="resize: none;"></textarea></td>
                     </tr>
                     <tr>
+                        <td>Danh mục</td>
+                        <td>
+                            <select name="danhmuc">
+                                <?php
+                                    $sql_danhmuc = "SELECT * FROM category ORDER BY id_danhmuc DESC";
+                                    $query_danhmuc = mysqli_query($connect,$sql_danhmuc);
+                                     while($row = mysqli_fetch_array($query_danhmuc)){
+                                ?>
+                                 <option value="<?php echo $row['id_danhmuc']?>"><?php echo $row['tendanhmuc']?></option>
+                                 <?php
+                                     }
+                                 ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Tình trạng</td>
                         <td>
                             <select name="tinhtrang">
