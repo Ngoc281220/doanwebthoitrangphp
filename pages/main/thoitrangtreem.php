@@ -1,14 +1,9 @@
-
 <?php
-    include("banner.php");
-    
-?>
-<?php
-     $sql_pro = "SELECT * FROM product,category WHERE product.id_danhmuc=category.id_danhmuc ORDER BY product.id_sp DESC LIMIT 4";
+     $sql_pro = "SELECT * FROM product,category WHERE product.id_danhmuc = category.id_danhmuc AND category.tendanhmuc LIKE '%Thời trang trẻ em%' LIMIT 4";
      $query_pro=mysqli_query($connect,$sql_pro);
 ?>
 <div class="list-product">
-                                 <h3>Tất cả sản phẩm</h3>
+                                 <h3>Thời trang trẻ em</h3>
                                   <div class="list-item">
                                    <?php
                                       if($query_pro){
@@ -18,7 +13,7 @@
                                           $hinhanh = $row['hinhanh'];
                                           $tensanpham = $row['tensanpham'];
                                           $giasp = $row['giasp'];
-                                          
+                                          $id_danhmuc = $row['id_danhmuc'];
                                    ?>
                                      <div class="item">
                                           <a href="index.php?quanly=sanpham&id=<?php echo $id_sanpham ?>" class="item-link">
@@ -33,10 +28,10 @@
                                      <?php
                                       }}
                                      ?>
+                  
    </div>
+            <div  class="view-link">
+                     <a href="index.php?quanly=thoitrangtreem&id=<?php echo $id_danhmuc?>" class="view"><span>Xem thêm</span></a>
+                </div>
 </div>
-   <?php
-       include("thoitrangnu.php");
-       include("thoitrangnam.php");
-       include("thoitrangtreem.php");
-   ?>
+     

@@ -15,6 +15,7 @@
     right: 0;
     background-color: #fff;
     box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
+    z-index: 100;
 }
 
  .menu{
@@ -54,7 +55,7 @@
 }
 
 main{
-    margin-top: 65px;
+    margin-top: 110px;
 }
 
 .container{
@@ -68,16 +69,18 @@ main{
     border: 1px solid #ccc;
     height: 400px;
     margin-right: 10px;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
 }
 .sidebar h3 {
     display: flex;
     align-items: center;
-    background-color: #ccc;
+    background-color: #007bff;
     padding: 10px 10px;
     text-transform: uppercase;
-    color: #000;
+    color: #fff;
     font-weight: 400;
     font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 .sidebar h3 img{
@@ -93,13 +96,15 @@ main{
 .sidebar nav a{
   display: block;
   padding: 15px 10px;
-  
+  border-bottom: 1px solid #ccc;
   font-size: 16px;
   color: #000;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .sidebar nav a:hover{
-    background-color: rgb(238, 102, 102);
+    background-color: #007bff;
+    color: #fff;
 }
 .content{
     width: 75%;
@@ -113,12 +118,30 @@ main{
     display: block;
     object-fit: cover;
 }
-
+.list-product{
+    
+}
 .list-product h3{
-    font-size: 48px;
-    padding: 20px 0;
+    font-size: 40px;
+    padding-top: 56px;
+    padding-bottom: 20px;
     font-weight: normal;
-    color: #000;
+    color: #0e1c22;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.list-product .view-link{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px
+}
+.list-product .view-link .view{
+    padding: 13px 40px;
+    border: 1px solid #000;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #0E1C22;
 }
 
 .list-item{
@@ -132,21 +155,35 @@ main{
     width: 25%;
     padding: 0 10px;
     margin-bottom: 20px;
+   
 }
 .item a {
     display: block;
     width: 100%;
+}
+.item .item-link{
+    display: block;
+    width: 100%;
+    height: 389px;
 }
 .item a img{
     width: 100%;
     display: block;
     object-fit: cover;
     height: 100%;
+    transition: all 0.5s ease;
+    
 }
+.item a img:hover{
+    transform: scale(1.05);
+    
+}
+
 .home-title .style{
-    font-size: 16px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 5px;
+    color: #868e96;
     display: block;
 }
 
@@ -171,9 +208,69 @@ main{
     font-size: 16px;
 }
 
+.warper_delite{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.img_datai{
+    width: 50%;
+}
+.img_datai img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.info_datai{
+    width: 50%;
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+.info_datai span{
+    display: block;
+    padding: 10px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.info_datai .price{
+    color: red;
+}
+.info_datai h3{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.info_datai h4{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.info_datai  p{
+    margin-top: 20px ;
+    margin-bottom: 20px;
+    
+}
+.info_datai  p .themgiohang{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.chitiet{
+    font-size: 24px;
+    color: #0E1C22;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+footer {
+    margin-top: 300px;
+}
 footer h3{
     padding: 15px 0;
     text-align: center;
-    background-color: #000;
+    background-color: #007bff;
     color: #fff;
 }
