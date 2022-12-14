@@ -11,6 +11,7 @@
 <body>
       <div class="app">
           <?php
+             session_start();
              include("admin/config/config.php");
              include("pages/header.php");
              include("pages/main.php");

@@ -1,17 +1,28 @@
+<!-- <?php
+    // session_start();
+?> -->
 <?php
-    session_start();
-?>
-<?php
-    if(isset($_SESSION['cart'])){
-      //  echo "<pre>";
-      //  print_r($_SESSION['cart']);
-      //  echo "</pre>";
-    }
+    // if(isset($_SESSION['id_khachhang'])){
+    //    echo "<pre>";
+    //    print_r($_SESSION['id_khachang']);
+    //    echo "</pre>";
+    // }
    
 ?>
-<p>Giỏ hàng</p>
-<table width="100%"  >
-  <tr>
+
+<p style="display:flex;align-items: baseline;">Welecom
+    <?php
+        if(isset($_SESSION['dangky'])){
+            echo ''.'<span style="color:red;display:flex;margin-left:5px;">'.':' .$_SESSION['dangky'].'</span>';
+            
+        }
+        // echo $_SESSION['id_khachhang'];
+        
+    ?>
+</p>
+
+<table width="100%"  class="table_cart" >
+  <tr class="background_cart">
     <th>#</th>
     <th>Tên sản phẩm</th>
     <th>Hình ảnh</th>
@@ -47,7 +58,7 @@
         <a href="pages/main/congtrusoluong.php?tru=<?php  echo $id_sanpham?>">-</a></td>
     <td><?php echo $masp?></td>
     <td><?php echo  number_format($gia, 0)?> VND</td>
-    <td><?php echo number_format($thanhtien, 0)?>VND</td>
+    <td><?php echo number_format($thanhtien, 0)?> VND</td>
     <td><a href="pages/main/xoacart.php?xoa=<?php echo $id_sanpham?>">Xóa</a></td>
   </tr>
   <?php
@@ -55,9 +66,21 @@
     
   ?>
   <tr >
-      <td colspan=8>
-        <p style="float:left">Tổng tiền đơn hàng:  <?php echo number_format($tongtien, 0)?> VND</p>
-        <p style="float:right"><a href="pages/main/xoatatcacart.php?xoatatca=1" style="padding:10px 20px;background: #007bff;color: #fff;font-size: 16px;">Xóa tất cả</a></p>
+      <td colspan=8 class="togle_cart">
+          <p style="float:left">Tổng tiền đơn hàng:  <?php echo number_format($tongtien, 0)?> VND</p>
+          <p style="float:right"><a href="pages/main/xoatatcacart.php?xoatatca=1" style="padding:10px 20px;background: #007bff;color: #fff;font-size: 16px;">Xóa tất cả</a></p>
+          <div style="clear:both"></div>
+           <?php
+              if(isset($_SESSION['dangky'])){
+           ?>
+                  <p style="text-align: center;"><a href="index.php?quanly=thanhtoan">Đặt hàng</a></p>
+           <?php
+              } else{
+           ?>
+              <p style="text-align: center;" ><a href="index.php?quanly=dangky">Đăng nhập đặt hàng</a></p>
+           <?php
+              }
+           ?>
       </td>
 
   </tr>

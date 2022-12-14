@@ -6,4 +6,5 @@
         {
         echo "Không thể kết nối đến MySQL: " . mysqli_connect_error();
         }
+       
   ?>
